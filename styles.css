@@ -1,0 +1,114 @@
+/* Custom styles for ESP32 Edge DSP Audio Visualizer */
+
+/* CRT Scanlines subtle overlay */
+.crt-scanlines {
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%, 
+    rgba(0, 0, 0, 0.35) 50%
+  );
+  background-size: 100% 4px;
+}
+
+/* Custom Cyber Range Sliders */
+.cyber-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 6px;
+  background: #0f172a;
+  border: 1px solid #1e293b;
+  border-radius: 9999px;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.cyber-slider:hover {
+  border-color: #334155;
+}
+
+/* Slider thumbs */
+.cyber-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #00f3ff;
+  cursor: pointer;
+  box-shadow: 0 0 10px #00f3ff, 0 0 20px rgba(0, 243, 255, 0.4);
+  border: 2px solid #04070c;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.cyber-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 15px #00f3ff, 0 0 30px rgba(0, 243, 255, 0.7);
+}
+
+.cyber-slider.accent-neon-green::-webkit-slider-thumb {
+  background: #00ff88;
+  box-shadow: 0 0 10px #00ff88, 0 0 20px rgba(0, 255, 136, 0.4);
+}
+
+.cyber-slider.accent-neon-green::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 15px #00ff88, 0 0 30px rgba(0, 255, 136, 0.7);
+}
+
+.cyber-slider.accent-amber-400::-webkit-slider-thumb {
+  background: #ffb703;
+  box-shadow: 0 0 10px #ffb703, 0 0 20px rgba(255, 183, 3, 0.4);
+}
+
+/* Firefox slider thumbs */
+.cyber-slider::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #00f3ff;
+  cursor: pointer;
+  box-shadow: 0 0 10px #00f3ff;
+  border: 2px solid #04070c;
+}
+
+/* Gradient animations */
+@keyframes gradientX {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient-x {
+  background-size: 200% 200%;
+  animation: gradientX 3s ease infinite;
+}
+
+/* Smooth Canvas Rendering */
+#visualizerCanvas, #waveformCanvas, #latencySparkline {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #04070c;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00f3ff;
+}
